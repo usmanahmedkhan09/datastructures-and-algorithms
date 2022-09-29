@@ -62,9 +62,22 @@ class customArray
         }
     }
 
-    getElementById(index)
+    getElementByIndex(index)
     {
         return this.arr[index];
+    }
+
+    deleteElementByIndex(payload)
+    {
+        // Time Complexity of this opertaion takes O(N)
+
+        let index = payload;
+        while (index < this.size())
+        {
+            this.arr[index] = this.arr[index + 1];
+            index++;
+        }
+        this.index--;
     }
 
 }
@@ -74,8 +87,12 @@ let b = new customArray();
 b.push('usman');
 b.push('ahmed');
 b.push('khan');
+b.push('noor');
+b.push('abc')
 // b.shift();
 // b.traverse();
 // console.log(b.size());
-b.unshift('hoorain');
-b.traverse()
+// b.unshift('hoorain');
+// b.deleteElementByIndex(4)
+// b.traverse()
+// console.log(b.size());
