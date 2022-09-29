@@ -47,6 +47,17 @@ class customArray
         return element;
     }
 
+    insertElementAtPos(position, element)
+    {
+        this.index++
+        for (let i = this.size(); i >= position; i--)
+        {
+            this.arr[i + 1] = this.arr[i]
+        }
+
+        this.arr[position] = element
+    }
+
     size()
     {
         return this.index;
@@ -89,10 +100,12 @@ let b = new customArray();
 // b.push('add');
 // b.push('ann');
 // b.push('akk')
-// b.shift();
+// // b.shift();
 // b.traverse();
 // console.log(b.size());
 // b.unshift('hoorain');
 // b.deleteElementByIndex(4)
+// console.log(b.size());
+// b.insertElementAtPos(3, 'hoorain');
 // b.traverse()
 // console.log(b.size());
