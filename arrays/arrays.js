@@ -78,6 +78,16 @@ class customArray
         return this.arr[index];
     }
 
+    searchElement(element)
+    {
+        for (let i = 0; i < this.size(); i++)
+        {
+            if (this.arr[i] == element)
+                return `${element} found at ${i}`;
+        }
+
+        return 'Not Found'
+    }
     deleteElementByIndex(payload)
     {
         // Time Complexity of this opertaion takes O(N)
@@ -103,9 +113,8 @@ let b = new customArray();
 // // b.shift();
 // b.traverse();
 // console.log(b.size());
-// b.unshift('hoorain');
 // b.deleteElementByIndex(4)
 // console.log(b.size());
-// b.insertElementAtPos(3, 'hoorain');
 // b.traverse()
 // console.log(b.size());
+// console.log(b.searchElement('ann'))
