@@ -84,11 +84,11 @@ class customArray
 
 let b = new customArray();
 
-b.push('usman');
-b.push('ahmed');
-b.push('khan');
-b.push('noor');
-b.push('abc')
+// b.push('abb');
+// b.push('acc');
+// b.push('add');
+// b.push('ann');
+// b.push('akk')
 // b.shift();
 // b.traverse();
 // console.log(b.size());
