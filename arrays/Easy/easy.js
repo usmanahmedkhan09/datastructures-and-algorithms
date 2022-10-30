@@ -76,7 +76,7 @@ function removeDuplicates(nums)
             set.add(nums[i])
         }
     }
-    nums.sort()
+    nums = [...nums.sort()].sort((a, b) => a - b)
     return Array.from(set).length
 };
 
