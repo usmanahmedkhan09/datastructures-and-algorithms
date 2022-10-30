@@ -21,19 +21,9 @@
 function sum(nums, target)
 {
     let map = new Map();
-    for (let i = 0; i < nums.length; i++)
-    {
-        let value = target - nums[i]
-        if (map.has(value))
-        {
-            return [nums.indexOf(value), i]
-        } else
-        {
-            map.set(nums[i], i)
-        }
+    let j = nums.findIndex((a, i) => map.has(target - a) || map.set(a, i) && 0)
+    return [map.get(target - nums[j]), j]
 
-    }
-    return map
 }
 
-console.log(sum([2, 7, 11, 15], 9))
+sum([3, 2, 4], 6);
