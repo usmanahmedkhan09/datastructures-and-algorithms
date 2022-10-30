@@ -65,19 +65,15 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 function removeDuplicates(nums)
 {
-    let set = new Set();
     for (let i = 0; i < nums.length; i++)
     {
-        if (set.has(nums[i]))
-        {
-            nums[i] = '_'
-        } else
-        {
-            set.add(nums[i])
+        if (nums[i] == nums[i + 1])
+        { // 9 , 10
+            nums.splice(i, 1)
+            i--
         }
     }
-    nums = [...nums.sort()].sort((a, b) => a - b)
-    return Array.from(set).length
+    return nums.length
 };
 
 removeDuplicates([1, 1, 2]);
