@@ -1,4 +1,4 @@
-class customArray
+export default class customArray
 {
     constructor()
     {
@@ -105,4 +105,3 @@ class customArray
 
 }
 
-export default customArray 
