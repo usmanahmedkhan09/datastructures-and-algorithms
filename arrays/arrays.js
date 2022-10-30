@@ -88,6 +88,8 @@ class customArray
 
         return 'Not Found'
     }
+
+
     deleteElementByIndex(payload)
     {
         // Time Complexity of this opertaion takes O(N)
@@ -103,18 +105,4 @@ class customArray
 
 }
 
-let b = new customArray();
-
-// b.push('abb');
-// b.push('acc');
-// b.push('add');
-// b.push('ann');
-// b.push('akk')
-// // b.shift();
-// b.traverse();
-// console.log(b.size());
-// b.deleteElementByIndex(4)
-// console.log(b.size());
-// b.traverse()
-// console.log(b.size());
-// console.log(b.searchElement('ann'))
+export default customArray 
