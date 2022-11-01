@@ -181,6 +181,11 @@ function plusOne(digits)
     /*  
         return (BigInt(digits.join('')) + 1n).toString().split('')
     */
+
+    if (!digits.length) return [1]
+    const init = digits.slice(0, -1)
+    const last = digits.slice(-1);
+    return last == 9 ? [...plusOne(init), 0] : [...init, +last + 1]
 }
 
-console.log(plusOne([1, 2, 3]))
+plusOne([1, 2, 3])
