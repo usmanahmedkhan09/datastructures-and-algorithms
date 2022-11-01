@@ -189,3 +189,28 @@ function plusOne(digits)
 }
 
 plusOne([1, 2, 3])
+
+
+function mergeArrays(num1, num2)
+{
+    let length = num1.length + num2.length
+    let index = 0
+    for (let i = 0; i < length; i++)
+    {
+        if (num1[i] > num2[index])
+        {
+            let temp = num1[i]
+            num1[i] = num2[index]
+            num1[i + 1] = temp
+            index++;
+        } else if (num1[i] == 0)
+        {
+            num1[i] = num2[index]
+            index++
+        }
+
+    }
+    console.log(num1)
+}
+
+mergeArrays([1, 2, 3, 0, 0, 0], [2, 5, 6])
