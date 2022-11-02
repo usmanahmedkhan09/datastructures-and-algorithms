@@ -210,26 +210,30 @@ Explanation: The arrays we are merging are [1] and [].
 The result of the merge is [1].
 
 */
-function mergeArrays(num1, num2)
+function mergeArrays(num1, m, num2, n)
 {
-    let length = num1.length + num2.length
-    let index = 0
-    for (let i = 0; i < length; i++)
-    {
-        if (num1[i] > num2[index])
-        {
-            let temp = num1[i]
-            num1[i] = num2[index]
-            num1[i + 1] = temp
-            index++;
-        } else if (num1[i] == 0)
-        {
-            num1[i] = num2[index]
-            index++
-        }
+    let p1 = m - 1, p2 = n - 1, i = m + n - 1
 
+    while (p2 >= 0)
+    {
+        if (p1 > 0 && num1[p1] > num2[p2]) 
+        {
+            num1[i--] = num2[p2--]
+        }
+        else
+        {
+            num1[i--] = num1[p2--]
+
+        }
     }
-    console.log(num1)
+    return num1
 }
 
-mergeArrays([1, 2, 3, 0, 0, 0], [2, 5, 6])
+// i  = 1
+// p1 = 1
+// p2 = -1
+
+//[1, 2, 2, 3, 5, 6]  [2, 5, 6]
+
+let nums1 = [0], m = 0, nums2 = [1], n = 1
+console.log(mergeArrays(nums1, m, nums2, n))
