@@ -209,6 +209,13 @@ Output: [1]
 Explanation: The arrays we are merging are [1] and [].
 The result of the merge is [1].
 
+Example 3:
+Input: nums1 = [0], m = 0, nums2 = [1], n = 1
+Output: [1]
+Explanation: The arrays we are merging are [] and [1].
+The result of the merge is [1].
+Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+
 */
 function mergeArrays(num1, m, num2, n)
 {
@@ -216,24 +223,22 @@ function mergeArrays(num1, m, num2, n)
 
     while (p2 >= 0)
     {
-        if (p1 > 0 && num1[p1] > num2[p2]) 
+        if (p1 >= 0 && num1[p1] > num2[p2])
+        {
+            num1[i--] = num1[p1--]
+        } else
         {
             num1[i--] = num2[p2--]
-        }
-        else
-        {
-            num1[i--] = num1[p2--]
-
         }
     }
     return num1
 }
 
-// i  = 1
-// p1 = 1
-// p2 = -1
+// i  = 3
+// p1 = 2
+// p2 = 0
 
-//[1, 2, 2, 3, 5, 6]  [2, 5, 6]
+//[1, 2, 3, 0, 5, 6]  [2, 5, 6]
 
-let nums1 = [0], m = 0, nums2 = [1], n = 1
+let nums1 = [1], m = 1, nums2 = [], n = 0
 console.log(mergeArrays(nums1, m, nums2, n))
